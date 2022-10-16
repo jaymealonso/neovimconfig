@@ -44,6 +44,10 @@ neotree.setup(astronvim.user_plugin_opts("plugins.neo-tree", {
     },
   },
   filesystem = {
+    filtered_items = {
+      visible = true, -- when true, they will just be displayed differently than normal items
+      hide_dotfiles = false,
+    },
     follow_current_file = true,
     hijack_netrw_behavior = "open_current",
     use_libuv_file_watcher = true,
