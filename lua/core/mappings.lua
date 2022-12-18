@@ -137,6 +137,8 @@ if is_available "telescope.nvim" then
   maps.n["<leader>gt"] = { function() require("telescope.builtin").git_status() end, desc = "Git status" }
   maps.n["<leader>gb"] = { function() require("telescope.builtin").git_branches() end, desc = "Git branches" }
   maps.n["<leader>gc"] = { function() require("telescope.builtin").git_commits() end, desc = "Git commits" }
+  maps.n["<leader>fg"] =
+    { function() require("telescope.builtin").git_files() end, desc = "Search files managed by Git" }
   maps.n["<leader>ff"] = { function() require("telescope.builtin").find_files() end, desc = "Search files" }
   maps.n["<leader>fF"] = {
     function() require("telescope.builtin").find_files { hidden = true, no_ignore = true } end,
@@ -222,5 +224,7 @@ maps.n["<leader>ut"] = { function() astronvim.ui.toggle_tabline() end, desc = "T
 maps.n["<leader>uu"] = { function() astronvim.ui.toggle_url_match() end, desc = "Toggle URL highlight" }
 maps.n["<leader>uw"] = { function() astronvim.ui.toggle_wrap() end, desc = "Toggle wrap" }
 maps.n["<leader>uy"] = { function() astronvim.ui.toggle_syntax() end, desc = "Toggle syntax highlight" }
+
+maps.n["<leader>r"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Replace" }
 
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
