@@ -173,6 +173,8 @@ if is_available "telescope.nvim" then
     { function() require("telescope.builtin").lsp_workspace_symbols() end, desc = "Search workspace symbols" }
   maps.n["<leader>lR"] = { function() require("telescope.builtin").lsp_references() end, desc = "Search references" }
   maps.n["<leader>lD"] = { function() require("telescope.builtin").diagnostics() end, desc = "Search diagnostics" }
+  maps.v["<leader>W"] =
+    { function() require("telescope.builtin").grep_string() end, desc = "Telescope: Grep selected word" }
 end
 
 -- Terminal
